@@ -1,0 +1,45 @@
+name: UIのズレの報告
+description: プレビューのSNSのUIや危険エリアが、実際のアプリとずれているときに報告してください。
+title: "[UIのズレ] "
+labels: ["ui-outdated"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        報告ありがとうございます。SNSのUIは端末やアカウント（A/Bテスト）によって違うことがあるため、端末とアプリのバージョンをできるだけ書いてください。
+        **スクリーンショットを添付する場合は、他の人のアカウント名・投稿・個人情報が写らないようにしてください。**
+        **この Issue は誰でも見られます。公開前の動画は貼らないでください。**
+  - type: dropdown
+    id: platform
+    attributes:
+      label: プラットフォーム
+      options:
+        - TikTok
+        - YouTube Shorts
+        - Instagram Reels
+        - X（縦型動画の全画面表示）
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: どこがずれていますか
+      description: 例：右側のボタンの列が、プレビューより上に表示される
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 確認した端末とOS
+      placeholder: 例：iPhone 15 / iOS 26.1
+  - type: input
+    id: sns_app_version
+    attributes:
+      label: SNSアプリのバージョン
+      placeholder: 例：TikTok 42.1.0
+  - type: input
+    id: app_version
+    attributes:
+      label: SNS SafeArea Preview のバージョンとテンプレートの版
+      description: アプリの「UIのズレを報告する」から開いた場合は、件名に自動で入っています。
+      placeholder: 例：1.0.0 / テンプレート2026-11-18版
